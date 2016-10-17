@@ -40,7 +40,9 @@ ul, ol, dl, figure {
  */
 img {
   max-width: 100%;
-  vertical-align: middle; }
+  vertical-align: middle;
+  width: 100%;
+  height: auto; }
 
 /**
  * Figures
@@ -113,19 +115,18 @@ pre {
     padding-right: 0;
     padding-left: 0; }
 
-/**
- * Clearfix
- */
-/**
- * Icons
- */
-.icon > svg {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  vertical-align: middle; }
-  .icon > svg path {
-    fill: #828282; }
+button,
+input[type=submit] {
+  background: blue;
+  color: white;
+  font-family: inherit;
+  border: 2px solid black;
+  cursor: pointer; }
+  button:hover, button:active,
+  input[type=submit]:hover,
+  input[type=submit]:active {
+    color: black;
+    background: white; }
 
 .l-wrapper {
   border: 6px solid black; }
@@ -196,7 +197,11 @@ pre {
   border: none;
   font-size: 36px;
   font-weight: 600;
-  cursor: pointer; }
+  cursor: pointer;
+  color: black; }
+  .navigation-button:hover, .navigation-button:active {
+    background: inherit;
+    color: inherit; }
   @media (min-width: 800px) {
     .navigation-button {
       display: none; } }
@@ -304,7 +309,8 @@ pre {
         flex: 0 1 47.5%; } }
 
 .post-single {
-  padding-bottom: 100px; }
+  padding-bottom: 100px;
+  max-width: calc(95-px / 100 * 66); }
 
 .logo {
   margin-bottom: 0;

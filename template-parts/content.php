@@ -15,7 +15,8 @@
       if ( is_single() ) :
         the_title( '<h1 class="title-main">', '</h1>' );
 
-        if ($meta = get_post_meta($post->ID, 'real_author', true)) {
+        $meta = get_post_meta($post->ID, 'real_author', true);
+        if ($meta && $meta[0]) {
           echo '<p class="post-author">geschrieben von '. $meta;
           echo ', veröffentlicht von '. get_the_author() .'</p>';
         } else {

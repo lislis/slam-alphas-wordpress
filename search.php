@@ -13,7 +13,7 @@ get_header(); ?>
 if ( have_posts() ) : ?>
 
 <section>			
-<h1 class="title-main"><?php printf( esc_html__( 'Search Results for: %s', 'slamalphas' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+<h1 class="title-main"><?php printf( esc_html__( 'Suchergebnisse für: %s', 'slamalphas' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			
 
 			<?php

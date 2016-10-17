@@ -10,4 +10,3 @@
 ?>
 <?php the_title( '<h1 class="title-main">', '</h1>' ); ?>
 <?php the_content(); ?>
-Blubb
