@@ -18,10 +18,12 @@
 <aside class="col-1">
   <h2 class="title-sub">Die Alphas</h2>
   <ul class="list-titlelike">
-  <?php if ($field = get_post_meta($post->ID, 'alpha', false)) {
-      foreach ($field as $key => $alpha) { ?>
-    <li><?php echo $field[$key]; ?></li>
-  <?php }} ?>
+  <?php
+      $args = array( 'post_type' => 'alpha', 'posts_per_page' => 99, 'order' => 'asc' );
+    $loop = new WP_Query( $args );
+    while ( $loop->have_posts() ) : $loop->the_post();
+      echo '<li><a href="'. get_the_excerpt() .'" title="Mehr über '. get_the_title() .'">'. get_the_title() . '</a></li>';
+    endwhile; ?>
   </ul>
 </aside>
 

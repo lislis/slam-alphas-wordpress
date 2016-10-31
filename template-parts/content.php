@@ -18,18 +18,15 @@
         $meta = get_post_meta($post->ID, 'real_author', true);
         if ($meta && $meta[0]) {
           echo '<p class="post-author">geschrieben von '. $meta;
-          echo ', veröffentlicht von '. get_the_author() .'</p>';
         } else {
-          '<p class="post-author">geschrieben und veröffentlicht von '. the_author() .'</p>';
+          '<p class="post-author">geschrieben von '. the_author() .'</p>';
         }
       else :
         the_title( '<h2 class="title-main"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
       endif; ?>
     </header>
     <?php if ( has_post_thumbnail() ) :
-      if ( is_single() ) : ?>
-        <figure><?php the_post_thumbnail('large'); ?></figure><?php
-      else : ?>
+      if ( !is_single() ) : ?>
         <figure><?php the_post_thumbnail('medium'); ?></figure><?php
       endif; ?>
     <?php endif; ?>
