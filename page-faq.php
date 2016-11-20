@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Die Idee
+ * Template Name: FAQ
  */
 ?>
 <?php get_header(); ?>
@@ -16,13 +16,13 @@
 </article>
 
 <aside class="col-1">
-  <h2 class="title-sub">Die Alphas</h2>
-  <ul class="list-titlelike">
+  <ul class="list-images">
   <?php
-      $args = array( 'post_type' => 'alpha', 'posts_per_page' => 99, 'orderby' => 'post_title', 'order' => 'ASC' );
+    $args = array( 'post_type' => 'faq_image', 'posts_per_page' => 99, 'order' => 'asc' );
     $loop = new WP_Query( $args );
     while ( $loop->have_posts() ) : $loop->the_post();
-      echo '<li><a href="'. get_the_excerpt() .'" title="Mehr über '. get_the_title() .'">'. get_the_title() . '</a></li>';
+      echo '<li><img src="'. get_the_post_thumbnail_url() . '" alt="'. get_the_title() . '">';
+      echo '<p class="image-additional">'. get_the_title() .'</p></li>';
     endwhile; ?>
   </ul>
 </aside>
