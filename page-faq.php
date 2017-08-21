@@ -21,7 +21,7 @@
     $args = array( 'post_type' => 'faq_image', 'posts_per_page' => 99, 'order' => 'asc' );
     $loop = new WP_Query( $args );
     while ( $loop->have_posts() ) : $loop->the_post();
-      echo '<li><img src="'. get_the_post_thumbnail_url() . '" alt="'. get_the_title() . '">';
+      echo '<li><img src="'. get_the_post_thumbnail_url(null, 'large') . '" alt="'. get_the_title() . '">';
       echo '<p class="image-additional">'. get_the_title() .'</p></li>';
     endwhile; ?>
   </ul>

@@ -122,3 +122,14 @@ function wpse_57647_print_text_editor()
 
 
 include('inc/template-tags.php');
+
+
+function accordion_h_func( $atts, $content = "" ) {
+	return "<div class='accordion-h'>$content</div>";
+}
+add_shortcode( 'accordion-h', 'accordion_h_func' );
+
+function accordion_b_func( $atts, $content = "" ) {
+	return "<div class='accordion-b'>$content</div>";
+}
+add_shortcode( 'accordion-b', 'accordion_b_func' );
