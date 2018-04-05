@@ -27,8 +27,10 @@
     endwhile; ?>
   </ul>
   <?php 
-  $member_page = get_page_by_title( 'Fördermitglieder' ); ?>
-  <p>Wir freuen uns über <a href="<?php echo get_permalink($member_page->ID); ?>">Fördermitglieder</a>.</p>
+  $member_page = get_page_by_title( 'Fördermitglieder' ); 
+  if ($member_page) { ?>
+    <p>Wir freuen uns über <a href="<?php echo get_permalink($member_page->ID); ?>">Fördermitglieder</a>.</p>
+  <?php } ?>
 </aside>
 
 <?php
