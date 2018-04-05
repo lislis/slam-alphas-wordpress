@@ -38,13 +38,5 @@
         </ul>
       </nav>
     </header>
-    <aside class="l-alphabet">
-      <ul>
-        <li><a href="#">a</a></li>
-        <li><a href="#">b</a></li>
-        <li><a href="#">c</a></li>
-        <li><a href="#">d</a></li>
-      </ul>
-    </aside>
     <main class="l-main">
       <div class="l-content">
