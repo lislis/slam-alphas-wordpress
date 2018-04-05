@@ -73,7 +73,7 @@ add_action( 'after_setup_theme', 'slamalphas_setup' );
  * Enqueue scripts and styles.
  */
 function slamalphas_scripts() {
-	wp_enqueue_style( 'slamalphas-style', get_template_directory_uri() . '/css/main.css' );
+	wp_enqueue_style( 'slamalphas-style', get_template_directory_uri() . '/css/main.min.css' );
 
 	wp_enqueue_script( 'slamalphas-js', get_template_directory_uri() . '/js/main.js', array(), '20161016', false );
 }

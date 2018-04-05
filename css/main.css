@@ -574,3 +574,7 @@ button {
   .profile-button:hover, .profile-button:active {
     background: none;
     color: #e63831; }
+
+.list-titlelike {
+  margin-bottom: 1.5em;
+}
