@@ -578,3 +578,8 @@ button {
 .list-titlelike {
   margin-bottom: 1.5em;
 }
+
+iframe {
+  width: 100%;
+  height: auto;
+}
