@@ -583,3 +583,8 @@ iframe {
   width: 100%;
   height: auto;
 }
+
+.social {
+  display: flex;
+  justify-content: center;
+}
