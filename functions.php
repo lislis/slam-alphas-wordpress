@@ -73,7 +73,7 @@ add_action( 'after_setup_theme', 'slamalphas_setup' );
  * Enqueue scripts and styles.
  */
 function slamalphas_scripts() {
-	wp_enqueue_style( 'slamalphas-style', get_template_directory_uri() . '/css/main.css' );
+	wp_enqueue_style( 'slamalphas-style', get_template_directory_uri() . '/css/main.css', array(), '20210131' );
 
 	wp_enqueue_script( 'slamalphas-js', get_template_directory_uri() . '/js/main.js', array(), '20161016', false );
 }
@@ -82,41 +82,41 @@ add_action( 'wp_enqueue_scripts', 'slamalphas_scripts' );
 
 add_action( 'admin_init', 'wpse_57647_register_settings' );
 
-/* 
- * Register settings 
+/*
+ * Register settings
  */
-function wpse_57647_register_settings() 
+function wpse_57647_register_settings()
 {
-    register_setting( 
-        'general', 
+    register_setting(
+        'general',
         'html_imprint_message'
     );
-    add_settings_section( 
-        'site-guide', 
-        'Impressum', 
-        '__return_false', 
-        'general' 
+    add_settings_section(
+        'site-guide',
+        'Impressum',
+        '__return_false',
+        'general'
     );
-    add_settings_field( 
-        'html_imprint_message', 
-        'Hier kommt der Impressumstext hin', 
-        'wpse_57647_print_text_editor', 
-        'general', 
-        'site-guide' 
+    add_settings_field(
+        'html_imprint_message',
+        'Hier kommt der Impressumstext hin',
+        'wpse_57647_print_text_editor',
+        'general',
+        'site-guide'
     );
 
-}    
+}
 
-/* 
- * Print settings field content 
+/*
+ * Print settings field content
  */
-function wpse_57647_print_text_editor() 
+function wpse_57647_print_text_editor()
 {
     $the_guides = html_entity_decode( get_option( 'html_imprint_message' ) );
-    echo wp_editor( 
-        $the_guides, 
-        'sitepublishingguidelines', 
-        array( 'textarea_name' => 'html_imprint_message' ) 
+    echo wp_editor(
+        $the_guides,
+        'sitepublishingguidelines',
+        array( 'textarea_name' => 'html_imprint_message' )
     );
 }
 
